@@ -3,25 +3,13 @@
  * @author Jon Low
  */
 
-'use strict';
-
-/**
- * Livereload and connect variables
- */
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')( {
-  port: LIVERELOAD_PORT
-});
-var mountFolder = function (connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
-
-var buildfolder = 'build';
-
 /**
  * Grunt module
  */
+
 module.exports = function (grunt) {
+
+  'use strict';
 
   /**
    * Dynamically load npm tasks
@@ -39,7 +27,7 @@ module.exports = function (grunt) {
      * Set project info
      */
     project: {
-      buildfolder: buildfolder,
+      buildfolder: 'build',
       css: [
         'sass/style.scss'
       ],
@@ -92,18 +80,14 @@ module.exports = function (grunt) {
      * livereload snippet
      */
     connect: {
-      options: {
-        port: 9000,
-        hostname: '*',
-        livereload: false
-      },
-      livereload: {
+      server: {
         options: {
-          middleware: function (connect) {
-            return [lrSnippet, mountFolder(connect, buildfolder)];
-          }
+          base: 'build',
+          port: 9000,
+          hostname: '*'
         }
       }
+
     },
 
     /**
@@ -127,7 +111,7 @@ module.exports = function (grunt) {
      */
     open: {
       server: {
-        path: 'http://localhost:<%= connect.options.port %>'
+        path: 'http://localhost:9000'
       }
     },
 
@@ -245,19 +229,12 @@ module.exports = function (grunt) {
         files: 'sass/{,*/}*.{scss,sass}',
         tasks: ['sass:dev']
       },
-      livereload: {
+      reload: {
+        files: '<%= project.buildfolder %>/css/*.css',
         options: {
-          livereload: LIVERELOAD_PORT
-        },
-        files: [
-          //'pages/{,*/}*.html',
-          //'partials/{,*/}*.html',
-          //'templates/{,*/}*.html',
-          '<%= project.buildfolder %>/css/*.css'
-          //'<%= project.buildfolder %>/js/{,*/}*.js',
-          //'<%= project.buildfolder %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
-      }
+          livereload: true
+        }
+      },
     }
   });
 
@@ -269,7 +246,7 @@ module.exports = function (grunt) {
     'sass:dev',
     'stencil',
     'concat:dev',
-    'connect:livereload',
+    'connect:server',
     'open',
     'watch'
   ]);

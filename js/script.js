@@ -31,5 +31,3 @@ var Jon = (function(){
   };
 
 }());
-
-
