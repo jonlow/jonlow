@@ -1,0 +1,8 @@
+@function em($value, $base: $base-font-size) {
+
+    @if (unit($value) == 'em') {
+      $stripped: $base / ($base * 0 + 1); //strip unit
+      @return ($value * $stripped / 10);
+    }
+    @return ($value / $base) * 1em;
+}

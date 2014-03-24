@@ -1,0 +1,151 @@
+//Main Navigation
+//-----------------------------------------------------------------------
+
+.navigation {
+  @include clearfix;
+  //@include single-transition(all,0.3s,ease-out);
+  position: absolute;
+  z-index: 102;
+  width: 100%;
+  overflow: hidden;
+  clear: both;
+  top: 61px;
+  left: 0;
+}
+
+.fcbNav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: em(18px, 18px);
+  // Global level styles
+  //-----------------------------------------------------------------------
+  > li > a {
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+    background-color: #2d3236;
+    color: #fff;
+    text-decoration: none;
+    font-style: normal;
+    font-size: em(18px, 18px);
+    min-height: 60px;
+
+    &:hover {
+      background: lighten(#2d3236,3%);
+    }
+
+    > span{
+      color: #fff;
+      font-size: em(16px);
+
+      &.icon-right-circled:before {
+        float: right;
+        color: #0059a5;
+      }
+
+      &:after {
+        font-family: "fontello";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: 0;
+        margin-top: 1px;
+        text-align: center;
+        opacity: .8;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: .2em;
+        content: '\e80e';
+        float: right;
+        color: #bebebe;
+        font-size: em(18px,18px);
+      }
+    }
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  li {
+    padding: 0;
+    line-height: 18px;
+
+
+    &.filler {
+      display: none;
+    }
+  }
+
+  .indicator {
+    float: right;
+  }
+
+  // Specific level nagiation style overrides
+  //-----------------------------------------------------------------------
+  &.lvl1 {
+
+    li {
+      border-bottom: 1px solid #202020;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:last-child {
+        border: 0;
+      }
+    }
+
+    li.active > a {
+      background: darken(#d91836,10%);
+    }
+  }
+
+  .lvl2  {
+    display:none; //mobile navigation does not need to display the secondary level
+  }
+}
+
+//  To show and hide the navigation in mobile view
+//-----------------------------------------------------------------------
+.navigation.active, .navigation > ul ul.active {
+  max-height: 55em;
+}
+
+.navigation, .navigation > ul ul {
+  max-height: 0;
+}
+
+
+
+// Festival Nav
+
+.festival-nav {
+  background: #ae3d45;
+  padding: 0;
+  top: auto;
+}
+
+.fcbFestivalNav {
+
+  ul{
+    display: none;
+  }
+  > li {
+
+
+    > a {
+      background: none;
+    }
+
+  }
+}
+
+
+

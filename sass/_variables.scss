@@ -1,0 +1,23 @@
+// Custom variables ( Place All you custom project specific variables here )
+//----------------------------------------------------------------------------------------------------
+
+/* Base Font Variables (ONLY MODIFY DO NOT DELETE) */
+//----------------------------------------------------------------------------------------------------
+$mainFont: "Source Sans Pro", sans-serif;
+$base-font-size: 10px;
+
+// Grid Settings
+//----------------------------------------------------------------------------------------------------
+$rowWidth: 1200px !default; // Width of main centre column. 1160 + ($columnGutter * 2)
+$columnGutter: 2em !default;
+
+//Base Colour Variables
+//----------------------------------------------------------------------------------------------------
+$mainColor: #006fb6;
+$secondaryColor: #efefef;
+$bgColor: #f2f3f3;
+$mainBlue: #096385;
+$secondaryBlue: #949494;
+$black: #38424d;
+$headingBlue: #2e3133;
+$white: #fff;

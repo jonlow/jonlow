@@ -1,0 +1,8 @@
+// Container that keeps content centred
+// to the max width of our content layout
+
+.inner {
+  max-width: $rowWidth;
+  margin: 0 auto;
+  position: relative;
+}

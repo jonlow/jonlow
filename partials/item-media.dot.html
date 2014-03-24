@@ -1,0 +1,34 @@
+{
+  "name" : "Jane Smith",
+  "desc" : "Our new offices are looking really good. Ready to move in next week?",
+  "image" : "images/placeholder-1.jpg",
+  "time" : "4m ago"
+}
+
+<!-- <div class="title-checkout-nav">
+    <div class="si-title {{= it.class }}">
+      <h1>{{= it.title }} <a href="#"><span>Need Help</span>?</a></h1>
+      <p class="lbl">{{= it.desc }}</p>
+    </div>
+</div> -->
+<div class="item item-media">
+  <div class="content">
+
+    <img class="photo" src="{{= it.image }}" alt="">
+
+    <div class="item-body">
+      <div class="item-header">
+        {{= it.name }}
+        <small class="timestamp">{{= it.time }}</small>
+      </div>
+      <div class="item-txt">
+        {{= it.desc }}
+      </div>
+
+      {{= it.include("socialLinks") }}
+
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,19 @@
+@mixin collapse {
+  margin-left: -$columnGutter;
+  margin-right: -$columnGutter;
+}
+
+@mixin nocollapse {
+  margin-left: -$columnGutter;
+  margin-right: -$columnGutter;
+}
+
+@mixin nogutter {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@mixin gutter {
+  padding-left: $columnGutter;
+  padding-right: $columnGutter;
+}

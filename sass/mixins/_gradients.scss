@@ -1,0 +1,13 @@
+@mixin leftFadeGradient{
+	background: none; // for older browser
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(left, rgba(0,0,0,1) 0%,rgba(0,0,0,0.99) 1%,rgba(255,255,255,0) 100%));
+}
+
+@mixin rightFadeGradient{
+	background: none; // for older browser
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(left, rgba(0,0,0,1) 0%,rgba(0,0,0,0.99) 1%,rgba(255,255,255,0) 100%));
+}

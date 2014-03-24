@@ -1,0 +1,106 @@
+.pt {
+	display: block;
+	@include clearfix;
+
+	ol {
+    	counter-reset:li; /* Initiate a counter */
+  		margin: 0;
+  		padding: 0;
+    	text-align: justify;
+
+		> li {
+			width: 14.28571428571429%;
+			float: left;
+			background: none;
+			text-align: center;
+			border: 1px solid #bec5cc;
+			border-left: 0;
+			position:relative; /* Create a positioning context */
+			list-style:none; /* Disable the normal item numbering */
+
+			&:first-child {
+				border-left: 1px solid #bec5cc;
+			}
+
+			&:before {
+				content:counter(li); /* Use the counter as content */
+				counter-increment:li; /* Increment the counter by 1 */
+				/* Position and style the number */
+				position:absolute;
+				left: 0;
+				top: 7px;
+				width:2em;
+				color:#2e3133;
+				font-weight:bold;
+				text-align:center;
+				display: block;
+				width: 100%;
+				font-size: 20px;
+			}
+
+			a {
+				text-decoration: none;
+				line-height: 1em;
+				color: #2e3133;
+				display: block;
+				font-size: em(10px);
+				padding: 13px 0 12px;
+				display: block;
+				text-indent: -9999em;
+				height: 35px;
+				position: relative;
+			}
+
+			&.active {
+				background: #0059a5;
+				border: 1px solid #0059a5;
+
+				a {
+					color: #fff;
+				}
+
+				&:before {
+					color: #fff;
+				}
+
+				&~ li {
+					background: #fff;
+				}
+			}
+		}
+	}
+
+  .pt-num {
+    font-weight: 600;
+  }
+
+}
+
+@media only screen and (min-width: 48em) {
+  .pt ol > li {
+
+    &:before {
+	  content: "";
+	}
+
+    a {
+      font-size: em(13px);
+	  padding: 12px 0 11px;
+	  text-indent: 0;
+	  height: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .pt ol > li {
+
+    &:before {
+	  content: "";
+	}
+
+    a {
+      font-size: em(16px);
+    }
+  }
+}

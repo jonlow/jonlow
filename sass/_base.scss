@@ -1,0 +1,92 @@
+/* Base Rules */
+//----------------------------------------------------------------------------------------------------
+html {
+
+}
+
+body {
+	margin : 0;
+	padding : 0;
+	width : 100%;
+  line-height: 1.1;
+	overflow-x:hidden;
+  font-family: $mainFont;
+
+}
+
+/* apply a natural box layout model to all elements */
+//----------------------------------------------------------------------------------------------------
+*, *:after, *:before { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+// Links
+//----------------------------------------------------------------------------------------------------
+
+a img { border: none;}
+
+a, a:hover, a:active, a:focus {
+  outline: 0;
+}
+
+p a, p a:visited { line-height: inherit; }
+
+
+blockquote {
+  font-size: em(28px);
+  background-image: url("/images/blockquoteTablet.png");
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  background-size: 84px auto;
+  padding: 0 30px 0 110px;
+  text-indent: 0px;
+  color: #949494;
+  font-style: italic;
+  line-height: 1.3em;
+  margin-bottom: 25px;
+  font-weight: 300;
+  letter-spacing: 0px;
+
+  footer {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+    color: #b7b7b7;
+  }
+}
+
+//Clear fix
+//----------------------------------------------------------------------------------------------------
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: block;
+}
+
+.clearBoth {
+	clear:both;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+input[type="text"],input[type="password"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    border:1px solid #cfd6dc;
+}
+
+select {
+	border-radius: 0;
+}

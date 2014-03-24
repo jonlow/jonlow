@@ -1,0 +1,29 @@
+{
+  "name" : "Jane Smith",
+  "desc" : "The new trailer for The Following is here! Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare.",
+  "image" : "images/placeholder-2.jpg",
+  "time" : "3h ago"
+}
+
+<div class="item item-media-feature">
+  <div class="content">
+
+    <a href="#" style="background-image:url('{{= it.image }}')" target="_blank" class="goto-vid">
+      <span class="icon-play"></span>
+    </a>
+
+    <div class="item-body">
+      <div class="item-header">
+        {{= it.name }}
+        <small class="timestamp">{{= it.time }}</small>
+      </div>
+      <div class="item-txt">
+        {{= it.desc }}
+      </div>
+
+      {{= it.include("socialLinks") }}
+
+    </div>
+
+  </div>
+</div>
