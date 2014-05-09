@@ -19,6 +19,9 @@
 @import "modules";
 @import "states";
 
+// Pages
+@import "pages/floatlabel";
+
 // 2x (Retina)
 @media (min--moz-device-pixel-ratio: 1.5),
        (-o-min-device-pixel-ratio: 3/2),

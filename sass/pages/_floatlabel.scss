@@ -1,0 +1,59 @@
+form {
+  max-width: 300px;
+  margin: 2em auto;
+}
+legend {
+  font-size: 24px;
+  line-height: 3em;
+  margin: 0 auto;
+  color: #555;
+  font-weight: 400;
+}
+label.sticky {
+  position: relative;
+  > label {
+    font-size: 16px;
+    margin-left: 1em;
+    padding: 0 .2em;
+    position: absolute;
+    line-height: 1em;
+    top: 0;
+    color: #898989;
+    transition: all .3s ease-in-out;
+    white-space: nowrap;
+  }
+  > input[type="text"],
+  > input[type="email"]  {
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 3em;
+    width: 100%;
+    padding: .5em 1.34em;
+    margin-bottom: 1em;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    &:focus {
+      border: 1px solid #00bafa;
+      + label {
+        color: #00bafa;
+      }
+    }
+    &:focus, &:valid {
+      outline: none;
+      border: 1px solid #00bafa;
+      -webkit-transition-property: border;
+      transition-duration: .3s;
+      + label {
+        background: #fff;
+        -webkit-transform: translate(0, -1.44em);
+        -webkit-transition-property:color, text;
+
+        transition-duration: .3s;
+        color: #00bafa;
+      }
+    }
+  }
+}

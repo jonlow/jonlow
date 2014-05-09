@@ -1,5 +1,3 @@
-console.log(document.URL);
-
 var addDown = function() {
 
 	var div = document.createElement('div'),

@@ -5,7 +5,7 @@ var msnry;
 //var bMasonryLoaded = false;
 
 WebFontConfig = {
-  google: { families: [ 'Lato:100,300,900:latin' ] }
+  google: { families: [ 'Lato:100,300,400,900:latin' ] }
 };
 
 (function() {
