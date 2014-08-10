@@ -48,3 +48,11 @@ img.full-width {
   border: none !important;
 }
 
+.wf-active {
+	h1,
+	p,
+	ul {
+		visibility: visible;
+	}
+}
+

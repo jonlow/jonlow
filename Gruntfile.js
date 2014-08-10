@@ -257,7 +257,7 @@ module.exports = function (grunt) {
    * Prep code for production
    */
   grunt.registerTask('build', [
-    'sass:dev',
+    'sass:dist',
     'stencil',
     'concat:dev',
     'prettify'

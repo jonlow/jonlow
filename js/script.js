@@ -5,7 +5,11 @@ var msnry;
 //var bMasonryLoaded = false;
 
 WebFontConfig = {
-  google: { families: [ 'Lato:100,300,400,900:latin' ] }
+  google: { families: [ 'Lato:100,300,400,900:latin' ] },
+  active: function() {
+    console.log('asdf');
+  }
+
 };
 
 (function() {
@@ -17,6 +21,10 @@ WebFontConfig = {
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(wf, s);
 })();
+
+
+
+
 
 var Jon = (function(){
 

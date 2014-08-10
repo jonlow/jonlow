@@ -1,7 +1,18 @@
 
     <script type="text/javascript">
       WebFontConfig = {
-        google: { families: [ 'Lato:100,300,400,900:latin' ] }
+        google: { families: [ 'Lato:100,300,400,900:latin' ] },
+          active: function() {
+            document.querySelector('h1').className = "animated pulse";
+
+            setTimeout(function () {
+              document.querySelector('p').className = "animated pulse";
+            }, 300);
+
+            setTimeout(function () {
+              document.querySelector('ul').className = document.querySelector('ul').className + " animated pulse";
+            }, 600);
+          }
       };
       (function() {
         var wf = document.createElement('script');
