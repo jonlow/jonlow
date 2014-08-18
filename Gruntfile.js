@@ -90,6 +90,27 @@ module.exports = function (grunt) {
 
     },
 
+    criticalcss: {
+        custom_options: {
+            options: {
+                url: "http://jonlow.com.au/",
+                width: 1200,
+                height: 900,
+                outputfile: "<%= project.buildfolder %>/css/critical.css",
+                filename: "css/style.css"
+            }
+        }
+    },
+
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: '<%= project.buildfolder %>/css/',
+        src: '*.css',
+        dest: '<%= project.buildfolder %>/css/'
+      }
+    },
+
     /**
      * JSHint
      * https://github.com/gruntjs/grunt-contrib-jshint
@@ -258,6 +279,8 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('build', [
     'sass:dist',
+    //'criticalcss',
+    'cssmin',
     'stencil',
     'concat:dev',
     'prettify'
